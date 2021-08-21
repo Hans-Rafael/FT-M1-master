@@ -1,13 +1,38 @@
 function BinarioADecimal(num) {
-  // tu codigo aca
-
+  // tu codigo aca 
+  var str = num.toString() // convierto num en string para split
+  var array = str.split('').reverse() // array pero en reverse facilitar calculos
+  function strTonum(st) {
+    switch (st) {
+      case st = '0': return 0;
+      case st = '1': return 1;
+      default: return false;
+    }
+  }
+  ///
+  var sumatoria = 0;
+  for (i = 0; i < array.length; i++) {
+    var numero = strTonum(array[i]);//tambie pude con parseInt(array[i],10) string to interger
+    sumatoria = sumatoria + (numero * Math.pow(2, i))
+  }
+  //var str =num.split('')
+  return sumatoria; // sumatoria viene siendo el numero dex del bin
 }
-
+////////////////////********************************** //////////////////////////
 function DecimalABinario(num) {
   // tu codigo aca
-
+  var array = []// array donde guardar valores de los residuos
+  do {
+    array.push( num % 2); // agrego valores al array
+    num = Math.floor(num / 2); // redondeo a piso corto decimales
+  } while (num >= 1);/// mientras que sea mayor a 1 dividendo.
+  array.reverse(); // giro array
+  var numero = array.join('');// tengo string concatenado
+  // debo llevar string a numero metodo parseInt(); 
+  //numero = parseInt(numero , 10); // convierto str en numero base 10
+  return numero;/* NOTA tarea mala pide devolver string cuando deberia ser cero
+  donde es posible hacerlo con una funcio tipo switch o con metodo de PerformanceNavigationTiming()*/
 }
-
 
 module.exports = {
   BinarioADecimal,

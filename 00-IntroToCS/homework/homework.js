@@ -30,8 +30,14 @@ function DecimalABinario(num) {
   var numero = array.join('');// tengo string concatenado
   // debo llevar string a numero metodo parseInt(); 
   //numero = parseInt(numero , 10); // convierto str en numero base 10
-  return numero;/* NOTA tarea mala pide devolver string cuando deberia ser cero
+ //
+ try{ return numero;
+ /* NOTA tarea mala pide devolver string cuando deberia ser cero
   donde es posible hacerlo con una funcio tipo switch o con metodo de PerformanceNavigationTiming()*/
+}
+catch (error) {
+  console.log("Error Atrapado: " + error.message);
+}
 }
 
 module.exports = {

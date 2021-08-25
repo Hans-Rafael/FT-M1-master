@@ -11,13 +11,76 @@
 // remove():   Head --> null y devuelve 1
 // search: Busca un valor dentro de la lista. Puede recibir un valor o una función. Si no hubiera resultados, devuelve null.
 
-function LinkedList() {
+class LinkedList { //EM6 style
+  //this._length_ = 0;
+  constructor() {
+    this.head = null;
+  }
+  ////////
+  add(valor) {
+    var nodo = new Node(valor);
+    if (!this.head) {// condicion si la lista esta vacia
+      this.head = nodo;
+    }
+    else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = nodo;
+    }
+  }
+}
+
+class Node {
+  constructor(value) {
+    this.data = value;
+    this.next = null;
+  }
+}
+/////////////////
+LinkedList.prototype.remove = function () {
+  if (!this.head === null) return null;
+  let current = this.head;
+  if (current.next === null) {//estoy ultomo nodo  
+    this.head = null;
+    return current;// or current.value si no trabaja
+  } else {
+    let current = this.head;
+    while (current.next.next !== null) {
+      current = null;
+      let dataRemove = curret.next.value;
+      return  dataRemove;
+    }
+  }
 
 }
 
-function Node(value){
+LinkedList.prototype.search = function (arg){
+if (this.head === null) return null;
+var cb;
+if(typeof arg != 'function'){
+  cb = function(valor){
+    return valor === arg;
+  }
+}
+else{
+  cb = arg;
+}
+let current = this.head;
+while(current.next != null){
+  if(cb(current.value) ){
+    return current.value;
+  }
+  else{
+    current = current.next
+  }
 
 }
+return null;
+}
+
+
 
 // Hash Table
 // Una hash table contiene un arreglo de "contenedores" donde puede guardar información.

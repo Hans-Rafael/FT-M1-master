@@ -92,8 +92,12 @@ return null;
 //    - Usar el número para buscar el contenedor donde está el valor.
 //    - Devolver el valor.
 
-function HashTable() {
+function HashTable(str) {//convierte str en numero contenedores[numero]=str;
+  var indice = parseInt(str,10);
 
+  var contenedores = [];//[str1,str2,,str4]
+  contenedores[indice]= str;
+  return contenedores;
 }
 
 

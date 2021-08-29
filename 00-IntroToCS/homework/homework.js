@@ -25,7 +25,7 @@ function DecimalABinario(num) {
   do {
     array.push( num % 2); // agrego valores al array
     num = Math.floor(num / 2); // redondeo a piso corto decimales
-  } while (num >= 1);/// mientras que sea mayor a 1 dividendo.
+  } while (num >= 1);/// mientras que sea mayor a 1 divido.
   array.reverse(); // giro array
   var numero = array.join('');// tengo string concatenado
   // debo llevar string a numero metodo parseInt(); 
@@ -39,6 +39,28 @@ catch (error) {
   console.log("Error Atrapado: " + error.message);
 }
 }
+/*
+function DecimalABinario(num){
+   
+  try{
+     var array =[];
+      if (num < 0 || num !== parseInt(num,10)) throw "introdusca numero entero > 0";
+      else{
+    do {
+     array.push(num % 2);
+      num = Math.floor(num / 2);
+    }
+    while(num !== 0)
+      
+      throw array.reverse().join('')
+      }
+  }
+  catch(err){ //entre parentesis nombre dare al error
+    return err // devolvera el err que es todo lo que tiene throw  como return en programa dentro de try
+  }
+ }
+*/
+
 
 module.exports = {
   BinarioADecimal,

@@ -19,6 +19,16 @@ function BinarioADecimal(num) {
   return sumatoria; // sumatoria viene siendo el numero dex del bin
 }
 ////////////////////********************************** //////////////////////////
+//POR RECURSIVIDAD
+/*
+function find( num ){
+    if (num === 0)
+        return 0;
+    else
+        return num % 2 + 10 * find(Math.floor(num / 2));
+}
+console.log(find(29))
+*/
 function DecimalABinario(num) {
   // tu codigo aca
   var array = []// array donde guardar valores de los residuos
